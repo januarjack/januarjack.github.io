@@ -1,0 +1,43 @@
+:root {
+  --warna1: #405ca7;
+  --warna2: #ffcc00;
+  --warna3: #f3250e;
+}
+
+.navbar .nav-item {
+  padding-left: 1.5rem;
+  font-family: "Rancho", cursive;
+  letter-spacing: 2px;
+}
+
+.navbar-brand {
+  font-family: "Aladin", cursive;
+  color: var(--warna1);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px var(--warna2);
+}
+
+.jumbotron {
+  padding-top: 5rem;
+  background-color: #e2edff;
+}
+
+#project {
+  background-color: #e2edff;
+}
+
+footer {
+  background-color: #e2edff;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+section p a {
+  text-decoration: none;
+}
+
+footer a {
+  text-decoration: none;
+}
