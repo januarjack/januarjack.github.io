@@ -32,6 +32,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
 
+    <!-- Animasi dari AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Style css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -113,20 +116,35 @@
     <section id="about">
       <div class="container">
         <div class="row text-center mb-3">
-          <div class="col">
+          <div
+            class="col"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <h2>About Me</h2>
           </div>
         </div>
         <div
           class="row justify-content-center fs-5 text-center row-cols-1 row-cols-md-4"
         >
-          <div class="col-md-4">
+          <div
+            class="col-md-4"
+            data-aos="zoom-in-right"
+            data-aos-duration="1000"
+            data-aos-delay="800"
+          >
             <p>
               "Hidup saja tidak cukup. Seseorang harus memiliki sinar matahari,
               kebebasan, dan sedikit bunga." - Hans Christian
             </p>
           </div>
-          <div class="col-md-4">
+          <div
+            class="col-md-4"
+            data-aos="zoom-in-left"
+            data-aos-duration="1000"
+            data-aos-delay="3000"
+          >
             <p>
               "Dalam setiap perjalanan dengan alam, seseorang menerima jauh
               lebih banyak daripada yang ia cari." - John Muir.
@@ -247,6 +265,111 @@
     </section>
     <!-- Project End -->
 
+    <!-- Gallery Start -->
+    <section id="gallery">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Gallery</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/1.jpg"
+                alt="Gambar 1"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/2.jpg"
+                alt="Gambar 2"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/3.jpg"
+                alt="Gambar 3"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/4.jpg"
+                alt="Gambar 4"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/5.jpg"
+                alt="Gambar 5"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/6.jpg"
+                alt="Gambar 6"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/7.jpg"
+                alt="Gambar 7"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/8.jpg"
+                alt="Gambar 8"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/9.jpg"
+                alt="Gambar 9"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="">
+              <img
+                src="img/gallery/10.jpg"
+                alt="Gambar 10"
+                class="img-fluid gallery-img"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery End -->
+
     <!-- Contact Start -->
     <section id="contact">
       <div class="container">
@@ -355,6 +478,43 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Script Animasi AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galleryImage = document.querySelectorAll(".gallery-img");
+
+      galleryImage.forEach((img, i) => {
+        img.dataset.aos = "fade-down";
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <!-- Script Animasi dari GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+
+      gsap.from(".jumbotron img", {
+        duration: 1,
+        y: -100,
+        opacity: 0,
+        ease: "bounce",
+      });
+      gsap.from(".display-4", {
+        duration: 1,
+        x: -100,
+        opacity: 0,
+        delay: 1,
+        ease: "back",
+      });
+    </script>
 
     <!-- Script  untuk input pesan ke google sheet-->
     <script>
